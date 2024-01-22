@@ -1,0 +1,18 @@
+## Various commands
+## Run them inside conda environment.
+
+# Compile fasta index file for the genome sequence
+# input: path to genome sequence in fasta format
+
+samtools faidx <path>
+
+
+# Basecalling
+# check for the workflow/kit
+# if guppy_basecaller is not recognized (not added to PATH), you can use full path instead.
+
+guppy_basecaller --print_workflows
+
+guppy_basecaller -i <path to fast5 files> -s <path to output folder> \
+ --flowcell FLO-MIN106 --barcode_kits EXP-NBD114 --kit SQK-LSK109 --device "cuda:0" --chunk_size 1000
+
